@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Skrollr</title>
+	<style>
+		body{
+			height: 2000px;
+		}
+
+		.box {
+			width: 50px;
+			height: 50px;
+			background-color: coral;
+			position: fixed;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			transition: all 1s;
+			-skrollr-animation-name: scale;
+		}
+		@-skrollr-keyframes scale {
+			0 {
+				transform:scale(1)rotate(0deg);
+				background-color:black;
+				border-radius:0%;
+			}
+			200 {
+				transform:scale(1.5)rotate(0deg);
+				background-color:red;
+				border-radius:0%;
+			}
+			400 {
+				transform:scale(2)rotate(45deg);
+				background-color:yellow;
+				border-radius:0%;
+			}
+			700 {
+				transform:scale(2)rotate(90deg);
+				background-color:blue;
+				border-radius:50%;	
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script src="jquery-1.12.4.min.js"></script>
+	<script src="skrollr.stylesheets.min.js"></script>
+	<script src="skrollr.min.js"></script>
+	<script>
+		$(function(){
+			var s = skrollr.init();
+		})
+	</script>
+</body>
+</html>
